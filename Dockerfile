@@ -1,4 +1,4 @@
-FROM debian:jessie
+FROM debian:stretch
 MAINTAINER Jens Schanz
 
 RUN apt-get update -y && apt-get upgrade -y
@@ -12,7 +12,7 @@ RUN curl http://repo.mosquitto.org/debian/mosquitto-stretch.list > /etc/apt/sour
 RUN apt-get update -y
 
 # finally install 
-RUN apt-get install -y --no-install-recommends mosquitto mosquitto-clients
+RUN apt-get install -y mosquitto mosquitto-clients
 
 # add a user
 RUN adduser --system --disabled-password --disabled-login mosquitto
