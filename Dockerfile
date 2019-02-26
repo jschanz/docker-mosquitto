@@ -17,6 +17,7 @@ RUN apt-get install -y mosquitto mosquitto-clients
 # add a user
 RUN adduser --system --disabled-password --disabled-login mosquitto
 RUN mkdir -p /etc/mosquitto && chown mosquitto -R /etc/mosquitto
+RUN mkdir -p /etc/mosquitto/ssl && chown mosquitto -R /etc/mosquitto/ssl
 RUN mkdir -p /var/log/mosquitto && chown mosquitto -R /var/log/mosquitto
 RUN mkdir -p /var/lib/mosquitto && chown mosquitto -R /var/lib/mosquitto
 
